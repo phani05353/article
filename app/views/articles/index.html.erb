@@ -1,0 +1,20 @@
+<h1>List of all the data</h1>
+
+<p>
+  <%=link_to "Create New post",new_article_path%>
+
+<table>
+  <tr>
+    <th> Title </th>
+    <th> Description </th>
+  </tr>
+
+<% @articles.each do |f|%>
+<tr>
+     <td> <%= f.title%></td>
+     <td><%= f.description%></td>
+     <td><%= link_to "edit ",edit_article_path(f) %>
+       <td> <%= link_to "show" ,article_path(f) %>
+</tr>
+<%end%>
+</table>
