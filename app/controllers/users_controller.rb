@@ -12,8 +12,22 @@ class UsersController < ApplicationController
       else
       render'new'
     end
+    end
+    def edit
+     @user=User.find (params[:id])
+    end
+    def update
+     @user=User.find (params[:id])
 
-  end
+      if @user.update (user_params)
+         flash[:success] ="your credentials got updated   #{@user.username}"
+          redirect_to articles_path
+        else
+        render'edit'
+      end
+    end
+
+
 
   private
   def user_params
