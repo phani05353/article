@@ -54,8 +54,9 @@ class ArticlesController < ApplicationController
   def article_params
     params.require(:article).permit(:title,:description)
   end
-  def require_same_user
-      if current_user!=@article.user
+  def require_same_user 
+      
+      if current_user!=@article.user and !current_user.admin?
           flash[:danger]="User previliges only for article owner"
           redirect_to root_path
       end
