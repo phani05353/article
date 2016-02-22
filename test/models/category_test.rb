@@ -29,6 +29,7 @@ class CategoryTest < ActiveSupport::TestCase
         @category.name="a"
         assert_not @category.valid?
         
+    
     end
     
     
