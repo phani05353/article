@@ -7,8 +7,8 @@ class CreateCategoriesTest < ActionDispatch::IntegrationTest
         get new_category_path
         assert_template 'categories/new'
         assert_difference 'Category.count' do
-        post_via_redirect categories_path, category: {name:"sports"}
-       end
+        post categories_path, category: {name:"sports"}
+      end 
     assert_template 'categories/index'
     assert_match "sports", response.body
     end
@@ -20,5 +20,5 @@ class CreateCategoriesTest < ActionDispatch::IntegrationTest
         post categories_path, category: {name:" "}
        end
     assert_template 'categories/new'
-    end
+   end
 end
