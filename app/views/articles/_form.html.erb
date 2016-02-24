@@ -2,7 +2,7 @@
 <h2>The following errors prevented the article from getting created</h2>
 <ul>
 <% @article.errors.full_messages.each do |msg| %>
-<li><%= msg %></li>
+<li><h2></h2><%= msg %></h2></li>
 <% end %>
 </ul>
 <% end %>
@@ -21,6 +21,8 @@
 <div class="control-label col-sm-2">
 <%= f.label :description %>
 </div>
+
+
 <div class="col-sm-8">
 <%= f.text_area :description, rows: 10, class: "form-control", placeholder: "Body of article" %>
 </div>

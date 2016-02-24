@@ -5,6 +5,10 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.5.1'
 # Use sqlite3 as the database for Active Record
 gem'bcrypt','~>3.1.7'
+gem 'mini_magick'
+gem 'fog'
+gem'carrierwave'
+
 
 gem'will_paginate','3.0.7'
 gem'bootstrap-will_paginate','0.0.10'
